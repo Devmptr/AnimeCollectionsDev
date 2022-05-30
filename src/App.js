@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
+import { MainContainer } from "./components/Home/HomeStyle";
+import AnimeDetail from "./components/Anime/AnimeDetail/AnimeDetail";
+import Collection from "./components/Collections/Collection";
+import CollectionDetail from "./components/Collections/CollectionDetail/CollectionDetail";
+
+function NoMatch() {
+    return <div>Not Found</div>;
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div>
+                <Header />
+                <MainContainer>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/collections"
+                            element={<Collection/>}
+                        />
+                        <Route
+                            path="/collection/detail/:collectionSlug"
+                            element={<CollectionDetail/>}
+                        />
+                        <Route path="/animes" element={<div>animes</div>} />
+                        <Route
+                            path="/anime/detail/:animeId"
+                            element={<AnimeDetail />}
+                        />
+                        <Route element={NoMatch()} />
+                    </Routes>
+                </MainContainer>
+                <Footer />
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
