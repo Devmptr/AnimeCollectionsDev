@@ -105,7 +105,7 @@ const AnimeDetail = () => {
                         <ModalCard>
                             {collection.length !== 0
                                 ? "Select Collection"
-                                : "You dont Have Collection"}
+                                : "You don't Have any Collection"}
                         </ModalCard>
                         {collection.length !== 0 ? (
                             <SelectInput>
