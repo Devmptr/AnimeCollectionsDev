@@ -10,7 +10,7 @@ export const LOAD_INDEX = gql`
                 hasNextPage
                 perPage
             }
-            media(search: $search, type: ANIME) {
+            media(search: $search, type: ANIME, genre_not_in: ["hentai"]) {
                 id
                 title {
                     english
