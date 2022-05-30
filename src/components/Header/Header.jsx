@@ -34,7 +34,7 @@ const Header = () => {
                 </ButtonHeader>
             ) : null}
             <TitleWrap>
-                <TitleHeader>Anime Collection APP</TitleHeader>
+                <TitleHeader>Anime Collection List</TitleHeader>
             </TitleWrap>
             <HeaderMenu>
                 <Link to="/">
